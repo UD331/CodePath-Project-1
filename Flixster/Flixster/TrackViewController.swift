@@ -4,7 +4,7 @@
 //
 //  Created by Charlie Hieger on 12/1/22.
 //
-
+import Nuke
 import UIKit
 
 class TracksViewController: UIViewController, UITableViewDataSource {
@@ -15,11 +15,9 @@ class TracksViewController: UIViewController, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // TODO: Pt 1 - Set tracks property with mock tracks array
-        tracks = Track.mockTracks
-        print(tracks)
-
+        
+        tracks = TracksResponse.loadJson()
+        
         tableView.dataSource = self
         
     }
@@ -49,7 +47,7 @@ class TracksViewController: UIViewController, UITableViewDataSource {
 
             // Use the index path to get the associated track
             let track = tracks[indexPath.row]
-
+            
             // Set the track on the detail view controller
             detailViewController.track = track
         }

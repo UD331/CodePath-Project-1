@@ -29,15 +29,16 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
 
         super.viewDidLoad()
+        Nuke.loadImage(with: URL(string: Track.posterBaseURLString+track.poster_path)!, into: trackImageView)
 
 
-        Nuke.loadImage(with: track.artworkUrl100, into: trackImageView)
-
-        trackNameLabel.text = track.trackName//Movie Name
-        artistLabel.text = track.artistName
-        albumLabel.text = track.collectionName // #Votes
-
-        genreLabel.text = track.primaryGenreName // Popularity
+        trackNameLabel.text = track.original_title//Movie Name
+        artistLabel.text = track.overview
+        var s = String(track.vote_count)
+        albumLabel.text = s // #Votes
+        s = String(track.popularity)
+        genreLabel.text = s// Popularity
+        releaseDateLabel.text = String(track.vote_average)
 
 
         // Create a date formatter to style our date and convert it to a string
@@ -45,8 +46,6 @@ class DetailViewController: UIViewController {
 //        let dateFormatter = DateFormatter()
 
 //        dateFormatter.dateStyle = .medium
-
-        releaseDateLabel.text = track.releaseDate // Vote Avg
 
 
         // Use helper method to convert milliseconds into `mm:ss` string format
