@@ -24,6 +24,7 @@ The following **additional** features are implemented:
 - [ ] List anything else that you can get done to improve the app functionality!
 - Made cosmetic changes such as colors and font
 - Added the launch screen and app icon.
+- Accounted for screen rotation and scrolling.
 
 ## Video Walkthrough
 
