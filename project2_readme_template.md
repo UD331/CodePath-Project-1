@@ -29,6 +29,7 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+https://submissions.us-east-1.linodeobjects.com/ios102/G6FRRJfG.gif
 
 
 ## Notes
